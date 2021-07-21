@@ -24,4 +24,13 @@ describe '#Stage' do
     expect(stage2).to(eq(stage1))
     end
   end
+
+  describe('.clear') do
+    it("clears all stage") do
+    stage1 = Stage.new("Ga-Zoinks", nil)
+    stage1.save()
+    Stage.clear()
+    expect(Stage.all).to(eq([]))
+    end
+  end
 end
