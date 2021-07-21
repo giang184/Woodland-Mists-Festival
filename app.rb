@@ -5,5 +5,5 @@ also_reload 'lib/**/*.rb'
 require 'pry'
 
 get '/' do
-  "Hello world!"
+  "Welcome to Woodland Mist Festival!"
 end

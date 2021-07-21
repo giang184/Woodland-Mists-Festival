@@ -14,7 +14,7 @@ class Stage
   end
 
   def save
-    @@albums[self.id] = Album.new(self.name, self.id)
+    @@stages[self.id] = Stage.new(self.name, self.id)
   end
 
   def == (stage_to_compare)
