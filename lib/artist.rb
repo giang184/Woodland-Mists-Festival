@@ -12,7 +12,7 @@ class Artist
   end
 
   def ==(artist_to_compare)
-    (self.name() == artist_to_compare.name()) && (self.album_id() == artist_to_compare.album_id())
+    (self.name() == artist_to_compare.name()) && (self.stage_id() == artist_to_compare.stage_id())
   end
 
   def self.all
@@ -20,17 +20,17 @@ class Artist
   end
 
   def save
-    @@artists[self.id] = Artist.new(self.name, self.album_id, self.id)
+    @@artists[self.id] = Artist.new(self.name, self.stage_id, self.id)
   end
 
   def self.find(id)
     @@artists[id]
   end
 
-  def update(name, album_id)
+  def update(name, stage_id)
     self.name = name
-    self.album_id = album_id
-    @@artists[self.id] = Artist.new(self.name, self.album_id, self.id)
+    self.stage_id = stage_id
+    @@artists[self.id] = Artist.new(self.name, self.stage_id, self.id)
   end
 
   def delete
@@ -52,6 +52,6 @@ class Artist
   end
 
   def stage
-    stage.find(self.stage_id)
+    Stage.find(self.stage_id)
   end
 end
